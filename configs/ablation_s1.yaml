@@ -1,0 +1,18 @@
+# S1 oversampling rules: A = balance to the median class count; B = original style synth_ratio x N_train spread uniformly.
+variants:
+  S1-A:
+    method: S1
+    s1: {rule: A}
+  S1-B-0.25:
+    method: S1
+    s1: {rule: B, ratio: 0.25}
+  S1-B-0.5:
+    method: S1
+    s1: {rule: B, ratio: 0.5}
+  S1-B-1.0:
+    method: S1
+    s1: {rule: B, ratio: 1.0}
+  S1-B-2.0:
+    method: S1
+    s1: {rule: B, ratio: 2.0}
+run_list: [S1-A, S1-B-0.25, S1-B-0.5, S1-B-1.0, S1-B-2.0]

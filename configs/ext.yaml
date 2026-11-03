@@ -1,0 +1,8 @@
+# Extra variants of the second revision round; it only adds variants (pass it in --config together with fast.yaml).
+#   S0-long / C2-GAN-long : longer training budget (manuscript Section 5.7)
+#   C2-GAN-noAux / GenQ-GAN-noAux : cGAN without the auxiliary classifier
+variants:
+  S0-long: {method: S0, supervised: {epochs: 100}}
+  C2-GAN-long: {method: C2-GAN, pretrain: {epochs: 200}, probe: {probe_epochs: 100}}
+  C2-GAN-noAux: {method: C2-GAN, gan: {aux_classifier: false}}
+  GenQ-GAN-noAux: {method: GenQ-GAN, gan: {aux_classifier: false}}

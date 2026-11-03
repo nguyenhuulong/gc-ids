@@ -1,0 +1,2 @@
+# UNSW-NB15: official training-set / testing-set csv, 10 classes
+data: {strict_counts: true}

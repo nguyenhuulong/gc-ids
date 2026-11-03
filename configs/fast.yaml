@@ -1,0 +1,8 @@
+# Reduced training budget used for ALL results reported in the manuscript (put LAST in the --config list).
+# The same budget is used for every method, so comparisons are fair; absolute values may be lower than with longer training.
+pretrain: {epochs: 50}
+vae: {epochs: 100, snapshots: [10, 25, 50, 100]}
+gan: {iters: 8000, snapshots: [1000, 2000, 4000, 8000]}
+probe: {probe_epochs: 30}
+supervised: {epochs: 30}
+eval: {n_eval: 10000}

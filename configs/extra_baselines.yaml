@@ -1,0 +1,4 @@
+# TabNet baseline (needs: pip install --no-deps pytorch-tabnet). Run with --variants TabNet.
+variants:
+  TabNet: {method: TabNet}
+run_list: [TabNet]

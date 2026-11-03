@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated article and this archive."
+title: "GC-IDS: code and results for 'Generative-Augmented Contrastive Representation Learning for NIDS: A Comparison of CVAE and CGAN as View Generators'"
+type: software
+authors:
+  - family-names: "Nguyễn"
+    given-names: "Hữu Long"
+  - family-names: "Nguyễn"
+    given-names: "Việt Hùng"
+license: MIT
+version: "1.0-revision"
+date-released: "2026-11-03"
+# TODO before release: affiliation, ORCID (optional), repository-code URL, Zenodo DOI

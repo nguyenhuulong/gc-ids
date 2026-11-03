@@ -1,0 +1,25 @@
+\begin{table}[t]
+\centering
+\caption{Classification results on nslkdd (mean$\pm$std over seeds). $\dagger$: differs from C2-GAN after Holm correction.}
+\label{tab:cls_nslkdd}
+\small
+\begin{tabular}{lcccc}
+\toprule
+Method & accuracy$\uparrow$ & macro\_f1$\uparrow$ & g\_mean$\uparrow$ & rare\_f1$\uparrow$ \\
+\midrule
+S0 & 0.7943$\pm$0.0065$^\dagger$ & 0.6084$\pm$0.0273 & 0.5092$\pm$0.0847 & 0.2745$\pm$0.0671 \\
+C1 & \textbf{0.7952$\pm$0.0071}$^\dagger$ & \textbf{0.6232$\pm$0.0188}$^\dagger$ & \textbf{0.5575$\pm$0.0303}$^\dagger$ & 0.3188$\pm$0.0526$^\dagger$ \\
+C1b-noise & 0.7694$\pm$0.0185 & 0.5944$\pm$0.0157$^\dagger$ & 0.5110$\pm$0.0319$^\dagger$ & 0.3214$\pm$0.0256$^\dagger$ \\
+C1b-mixup & 0.7788$\pm$0.0184 & 0.6019$\pm$0.0230 & 0.5440$\pm$0.0251 & 0.3100$\pm$0.0445 \\
+C2-VAE & 0.7717$\pm$0.0064 & 0.5498$\pm$0.0137 & 0.3430$\pm$0.0704 & 0.1507$\pm$0.0287 \\
+C2-GAN & 0.7679$\pm$0.0101 & 0.5577$\pm$0.0097 & 0.4105$\pm$0.0244 & 0.1865$\pm$0.0201 \\
+SupCon & 0.7697$\pm$0.0061 & 0.5523$\pm$0.0182 & 0.3551$\pm$0.0621 & 0.1632$\pm$0.0345 \\
+C3-realpair & 0.7646$\pm$0.0110 & 0.5459$\pm$0.0242 & 0.3822$\pm$0.0344 & 0.1605$\pm$0.0580 \\
+GC-mask-GAN & 0.7690$\pm$0.0093 & 0.5544$\pm$0.0231 & 0.3785$\pm$0.0511 & 0.1687$\pm$0.0373 \\
+GC-mask-VAE & 0.7753$\pm$0.0026 & 0.5713$\pm$0.0264 & 0.3556$\pm$0.1896 & 0.1987$\pm$0.0708 \\
+SCARF & 0.7797$\pm$0.0153 & 0.6182$\pm$0.0200 & 0.5360$\pm$0.0281 & \textbf{0.3477$\pm$0.0466} \\
+LightGBM & 0.7734$\pm$0.0063 & 0.5471$\pm$0.0076 & 0.3226$\pm$0.0165 & 0.1448$\pm$0.0179 \\
+FT-Transformer & 0.7682$\pm$0.0079 & 0.5628$\pm$0.0143 & 0.4305$\pm$0.0239 & 0.2095$\pm$0.0429 \\
+\bottomrule
+\end{tabular}
+\end{table}

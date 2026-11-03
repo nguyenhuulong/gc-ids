@@ -1,0 +1,4 @@
+# CIC-IDS2017 (independent third dataset). Cleaning rules are in gcids/data.py and DECISIONS.md.
+pretrain: {epochs: 60}     # larger dataset; the same value is used by every method
+gan: {iters: 15000}
+vae: {epochs: 100, snapshots: [10, 25, 50, 100]}

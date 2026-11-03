@@ -1,0 +1,11 @@
+# Pinned for reproducibility (tested versions). Install the CUDA build of torch that matches your driver.
+torch==2.5.1
+numpy>=1.26,<3
+pandas>=2.1
+scikit-learn>=1.4
+scipy>=1.11
+matplotlib>=3.8
+pyyaml>=6.0
+lightgbm>=4.3
+pytest>=8.0
+# optional: pytorch-tabnet==4.1.0 (TabNet baseline), ctgan (CTGAN/TVAE generators)

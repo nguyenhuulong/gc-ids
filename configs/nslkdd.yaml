@@ -1,0 +1,2 @@
+# NSL-KDD: official KDDTrain+/KDDTest+, 5 classes (rare: R2L, U2R)
+data: {strict_counts: true}

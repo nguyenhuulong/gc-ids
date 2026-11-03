@@ -1,0 +1,13 @@
+# Tiny settings: whole pipeline in a few minutes on CPU/GPU. NOT for results.
+seeds: [42, 123]
+results_dir: results_smoke
+cache_dir: cache_smoke
+pretrain: {epochs: 3, batch: 128}
+probe: {probe_epochs: 5}
+supervised: {epochs: 5}
+vae: {epochs: 10, snapshots: [10]}
+gan: {iters: 200, snapshots: [200], batch: 128, n_critic: 2}
+eval: {n_eval: 2000, c2st: false, save_emb_seeds: [42], emb_save_n: 500}
+baseline:
+  LightGBM: {n_estimators: 50, early_stopping: 10}
+  FT-Transformer: {epochs: 2}

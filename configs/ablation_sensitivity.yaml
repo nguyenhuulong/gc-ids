@@ -1,0 +1,47 @@
+# Hyper-parameter sensitivity of the main comparison (temperature, noise scale, batch size).
+variants:
+  C1b-noise-tau0.1:
+    method: C1b-noise
+    pretrain: {tau: 0.1}
+  C1b-noise-tau0.2:
+    method: C1b-noise
+    pretrain: {tau: 0.2}
+  C1b-noise-tau0.5:
+    method: C1b-noise
+    pretrain: {tau: 0.5}
+  C1b-noise-sigma0.02:
+    method: C1b-noise
+    pretrain: {sigma: 0.02}
+  C1b-noise-sigma0.1:
+    method: C1b-noise
+    pretrain: {sigma: 0.1}
+  C1b-noise-bs64:
+    method: C1b-noise
+    pretrain: {batch: 64}
+  C1b-noise-bs512:
+    method: C1b-noise
+    pretrain: {batch: 512}
+  C2-GAN-tau0.1:
+    method: C2-GAN
+    pretrain: {tau: 0.1}
+  C2-GAN-tau0.2:
+    method: C2-GAN
+    pretrain: {tau: 0.2}
+  C2-GAN-tau0.5:
+    method: C2-GAN
+    pretrain: {tau: 0.5}
+  C2-GAN-sigma0.02:
+    method: C2-GAN
+    pretrain: {sigma: 0.02}
+  C2-GAN-sigma0.1:
+    method: C2-GAN
+    pretrain: {sigma: 0.1}
+  C2-GAN-bs64:
+    method: C2-GAN
+    pretrain: {batch: 64}
+  C2-GAN-bs512:
+    method: C2-GAN
+    pretrain: {batch: 512}
+run_list: [C1b-noise-tau0.1, C1b-noise-tau0.2, C1b-noise-tau0.5, C1b-noise-sigma0.02,
+  C1b-noise-sigma0.1, C1b-noise-bs64, C1b-noise-bs512, C2-GAN-tau0.1, C2-GAN-tau0.2,
+  C2-GAN-tau0.5, C2-GAN-sigma0.02, C2-GAN-sigma0.1, C2-GAN-bs64, C2-GAN-bs512]

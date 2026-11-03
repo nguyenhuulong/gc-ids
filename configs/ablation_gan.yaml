@@ -1,0 +1,27 @@
+# GAN design ablation: auxiliary classifier on/off (label-leak control), fine-tune scope, majority pretraining.
+variants:
+  C2-GAN: {method: C2-GAN}
+  C2-GAN-noAux:
+    method: C2-GAN
+    gan: {aux_classifier: false}
+  C2-GAN-minority:
+    method: C2-GAN
+    gan: {finetune_scope: minority}
+  C2-GAN-noPretrain:
+    method: C2-GAN
+    gan: {pretrain_majority: false}
+  C2-GAN-noAux-minority:
+    method: C2-GAN
+    gan: {aux_classifier: false, finetune_scope: minority}
+  GenQ-GAN: {method: GenQ-GAN}
+  GenQ-GAN-noAux:
+    method: GenQ-GAN
+    gan: {aux_classifier: false}
+  GenQ-GAN-minority:
+    method: GenQ-GAN
+    gan: {finetune_scope: minority}
+  GenQ-GAN-noPretrain:
+    method: GenQ-GAN
+    gan: {pretrain_majority: false}
+run_list: [C2-GAN, C2-GAN-noAux, C2-GAN-minority, C2-GAN-noPretrain, C2-GAN-noAux-minority,
+  GenQ-GAN, GenQ-GAN-noAux, GenQ-GAN-minority, GenQ-GAN-noPretrain]

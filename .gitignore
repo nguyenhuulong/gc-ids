@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+# datasets are not redistributed: download them from their original sources (see README)
+data/nslkdd/*
+data/unswnb15/*
+data/cicids2017/*
+!data/**/.gitkeep
+# generated at run time
+cache/
+results/
+logs/
+*.zip

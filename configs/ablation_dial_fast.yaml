@@ -1,0 +1,22 @@
+# Generator-quality dial for the REDUCED budget (use together with configs/fast.yaml, whose snapshots are these checkpoints).
+# Analysis: Spearman(MMD, Macro-F1 / Rare-F1 / silhouette) via gcids.stats.dial_correlation. Use >= 3 seeds.
+# Note: with pretrain_frac 0.5 the GAN checkpoints at <= 4000 iterations are still in phase 1 (majority classes only), so minority classes
+# are poorly generated there; that is exactly the low-quality end of the dial.
+variants:
+  C2-GAN-it1000: {method: C2-GAN, checkpoint: 1000}
+  GenQ-GAN-it1000: {method: GenQ-GAN, checkpoint: 1000}
+  C2-GAN-it2000: {method: C2-GAN, checkpoint: 2000}
+  GenQ-GAN-it2000: {method: GenQ-GAN, checkpoint: 2000}
+  C2-GAN-it4000: {method: C2-GAN, checkpoint: 4000}
+  GenQ-GAN-it4000: {method: GenQ-GAN, checkpoint: 4000}
+  C2-GAN-it8000: {method: C2-GAN, checkpoint: 8000}
+  GenQ-GAN-it8000: {method: GenQ-GAN, checkpoint: 8000}
+  C2-VAE-ep10: {method: C2-VAE, checkpoint: 10}
+  GenQ-VAE-ep10: {method: GenQ-VAE, checkpoint: 10}
+  C2-VAE-ep25: {method: C2-VAE, checkpoint: 25}
+  GenQ-VAE-ep25: {method: GenQ-VAE, checkpoint: 25}
+  C2-VAE-ep50: {method: C2-VAE, checkpoint: 50}
+  GenQ-VAE-ep50: {method: GenQ-VAE, checkpoint: 50}
+  C2-VAE-ep100: {method: C2-VAE, checkpoint: 100}
+  GenQ-VAE-ep100: {method: GenQ-VAE, checkpoint: 100}
+run_list: [C2-GAN-it1000, GenQ-GAN-it1000, C2-GAN-it2000, GenQ-GAN-it2000, C2-GAN-it4000, GenQ-GAN-it4000, C2-GAN-it8000, GenQ-GAN-it8000, C2-VAE-ep10, GenQ-VAE-ep10, C2-VAE-ep25, GenQ-VAE-ep25, C2-VAE-ep50, GenQ-VAE-ep50, C2-VAE-ep100, GenQ-VAE-ep100]

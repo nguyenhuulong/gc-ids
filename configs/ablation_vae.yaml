@@ -1,0 +1,19 @@
+# cVAE design: beta and latent size.
+variants:
+  C2-VAE: {method: C2-VAE}
+  C2-VAE-beta1.0:
+    method: C2-VAE
+    vae: {beta: 1.0}
+  C2-VAE-beta4.0:
+    method: C2-VAE
+    vae: {beta: 4.0}
+  C2-VAE-beta16.0:
+    method: C2-VAE
+    vae: {beta: 16.0}
+  C2-VAE-lat8:
+    method: C2-VAE
+    vae: {latent: 8}
+  C2-VAE-lat64:
+    method: C2-VAE
+    vae: {latent: 64}
+run_list: [C2-VAE, C2-VAE-beta1.0, C2-VAE-beta4.0, C2-VAE-beta16.0, C2-VAE-lat8, C2-VAE-lat64]

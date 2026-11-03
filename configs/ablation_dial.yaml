@@ -1,0 +1,26 @@
+# Generator-quality dial: C2 with frozen generator checkpoints; analysis = Spearman(MMD, Macro-F1/Rare-F1/silhouette). Use >=5 seeds.
+variants:
+  C2-GAN-it1000: {method: C2-GAN, checkpoint: 1000}
+  GenQ-GAN-it1000: {method: GenQ-GAN, checkpoint: 1000}
+  C2-GAN-it2000: {method: C2-GAN, checkpoint: 2000}
+  GenQ-GAN-it2000: {method: GenQ-GAN, checkpoint: 2000}
+  C2-GAN-it5000: {method: C2-GAN, checkpoint: 5000}
+  GenQ-GAN-it5000: {method: GenQ-GAN, checkpoint: 5000}
+  C2-GAN-it10000: {method: C2-GAN, checkpoint: 10000}
+  GenQ-GAN-it10000: {method: GenQ-GAN, checkpoint: 10000}
+  C2-GAN-it20000: {method: C2-GAN, checkpoint: 20000}
+  GenQ-GAN-it20000: {method: GenQ-GAN, checkpoint: 20000}
+  C2-VAE-ep10: {method: C2-VAE, checkpoint: 10}
+  GenQ-VAE-ep10: {method: GenQ-VAE, checkpoint: 10}
+  C2-VAE-ep25: {method: C2-VAE, checkpoint: 25}
+  GenQ-VAE-ep25: {method: GenQ-VAE, checkpoint: 25}
+  C2-VAE-ep50: {method: C2-VAE, checkpoint: 50}
+  GenQ-VAE-ep50: {method: GenQ-VAE, checkpoint: 50}
+  C2-VAE-ep100: {method: C2-VAE, checkpoint: 100}
+  GenQ-VAE-ep100: {method: GenQ-VAE, checkpoint: 100}
+  C2-VAE-ep200: {method: C2-VAE, checkpoint: 200}
+  GenQ-VAE-ep200: {method: GenQ-VAE, checkpoint: 200}
+run_list: [C2-GAN-it1000, GenQ-GAN-it1000, C2-GAN-it2000, GenQ-GAN-it2000, C2-GAN-it5000,
+  GenQ-GAN-it5000, C2-GAN-it10000, GenQ-GAN-it10000, C2-GAN-it20000, GenQ-GAN-it20000,
+  C2-VAE-ep10, GenQ-VAE-ep10, C2-VAE-ep25, GenQ-VAE-ep25, C2-VAE-ep50, GenQ-VAE-ep50,
+  C2-VAE-ep100, GenQ-VAE-ep100, C2-VAE-ep200, GenQ-VAE-ep200]

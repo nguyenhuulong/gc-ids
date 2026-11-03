@@ -1,0 +1,28 @@
+# View-mix ratio: probability that view A is the generated view instead of a noisy real view (0 = C1b-noise, 1 = C2).
+variants:
+  pgen-0.0:
+    method: C2-GAN
+    pretrain: {p_gen: 0.0}
+  pgen-0.25:
+    method: C2-GAN
+    pretrain: {p_gen: 0.25}
+  pgen-0.5:
+    method: C2-GAN
+    pretrain: {p_gen: 0.5}
+  pgen-0.75:
+    method: C2-GAN
+    pretrain: {p_gen: 0.75}
+  pgen-1.0:
+    method: C2-GAN
+    pretrain: {p_gen: 1.0}
+  pgen-vae-0.25:
+    method: C2-VAE
+    pretrain: {p_gen: 0.25}
+  pgen-vae-0.5:
+    method: C2-VAE
+    pretrain: {p_gen: 0.5}
+  pgen-vae-0.75:
+    method: C2-VAE
+    pretrain: {p_gen: 0.75}
+run_list: [pgen-0.0, pgen-0.25, pgen-0.5, pgen-0.75, pgen-1.0, pgen-vae-0.25, pgen-vae-0.5,
+  pgen-vae-0.75]

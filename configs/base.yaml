@@ -1,0 +1,76 @@
+# Base configuration (SPEC sections 3-5 + addendum). Everything here is a DEFAULT; datasets/ablations override it.
+seeds: [42, 123, 456, 789, 1011, 2024, 2025, 3407, 7777, 31337]   # first 3 = paper seeds; >=6 needed for exact Wilcoxon p<0.05
+results_dir: results
+cache_dir: cache
+data: {val_frac: 0.2, rare_thresh: 0.015, strict_counts: true}
+
+pretrain:            # shared by every contrastive method (fair comparison)
+  hidden: [512, 256]  # + linear 128-d output
+  out_dim: 128
+  dropout: 0.3
+  epochs: 100
+  batch: 256
+  lr: 1.0e-3
+  tau: 0.5
+  weight_decay: 0.0
+  sigma: 0.05         # gaussian-noise view
+  keep_prob: 0.7      # random mask: zero out 30% of features
+  mixup_alpha: 0.2
+  p_gen: 1.0          # probability that view A is the generated one (1.0 = C2)
+  scarf_frac: 0.6
+probe: {probe_hidden: 64, probe_dropout: 0.1, probe_epochs: 50, probe_lr: 1.0e-3, probe_batch: 256}
+supervised: {epochs: 50, lr: 1.0e-3, batch: 256}
+s1: {rule: A, ratio: 1.0, cap_mult: 50}
+vae:
+  latent: 32
+  hidden: [256, 256]
+  beta: 4.0
+  warmup_frac: 0.2
+  epochs: 200
+  batch: 512
+  lr: 1.0e-3
+  sampling_power: 0.5
+  snapshots: [10, 25, 50, 100, 200]
+gan:
+  zdim: 32
+  g_hidden: [256, 256, 512]
+  d_hidden: [512, 256]
+  lambda_gp: 10.0
+  n_critic: 5
+  lr: 1.0e-4
+  batch: 256
+  iters: 20000
+  aux_classifier: true      # original code: ACGAN auxiliary classifier in D (see DECISIONS D6)
+  aux_weight: 1.0
+  pretrain_majority: true
+  pretrain_frac: 0.5
+  majority_share: 0.05
+  finetune_scope: all       # all | minority   (paper text says all, design notes say minority; both are run)
+  sampling_power: 0.5
+  snapshots: [1000, 2000, 5000, 10000, 20000]
+eval: {n_eval: 20000, c2st: true, save_emb_seeds: [42], emb_save_n: 5000}
+baseline:
+  LightGBM: {n_estimators: 1000, lr: 0.05, num_leaves: 63, early_stopping: 50}
+  FT-Transformer: {epochs: 30, lr: 3.0e-4, d: 64, heads: 4, layers: 2}
+  TabNet: {epochs: 100, patience: 15}
+
+# ---- main experiment E1: paper methods + label-role controls + extra baselines
+variants:
+  S0: {method: S0}
+  S1: {method: S1, s1: {rule: A}}
+  C1: {method: C1}
+  C1b-noise: {method: C1b-noise}
+  C1b-mixup: {method: C1b-mixup}
+  C2-VAE: {method: C2-VAE}
+  C2-GAN: {method: C2-GAN}
+  SupCon: {method: SupCon}
+  C3-realpair: {method: C3-realpair}
+  GC-mask-GAN: {method: GC-mask-GAN}
+  GC-mask-VAE: {method: GC-mask-VAE}
+  SCARF: {method: SCARF}
+  LightGBM: {method: LightGBM}
+  FT-Transformer: {method: FT-Transformer}
+  GenQ-VAE: {method: GenQ-VAE}
+  GenQ-GAN: {method: GenQ-GAN}
+run_list: [S0, S1, C1, C1b-noise, C1b-mixup, C2-VAE, C2-GAN, SupCon, C3-realpair, GC-mask-GAN, GC-mask-VAE, SCARF,
+           LightGBM, FT-Transformer, GenQ-VAE, GenQ-GAN]
