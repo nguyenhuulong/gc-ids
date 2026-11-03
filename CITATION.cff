@@ -7,6 +7,9 @@ authors:
     given-names: "Hữu Long"
     affiliation: "National Laboratory for Securing Information"
     email: "nguyenhuulong312@gmail.com"
+  - family-names: "Nguyễn"
+    given-names: "Việt Hùng"
+    affiliation: "Institute of Information and Communication Technology, Le Quy Don Technical University"
 license: MIT
 version: "1.0-revision"
 date-released: "2026-11-03"
