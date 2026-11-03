@@ -5,9 +5,20 @@ type: software
 authors:
   - family-names: "Nguyễn"
     given-names: "Hữu Long"
-  - family-names: "Nguyễn"
-    given-names: "Việt Hùng"
+    affiliation: "National Laboratory for Securing Information"
+    email: "nguyenhuulong312@gmail.com"
 license: MIT
 version: "1.0-revision"
 date-released: "2026-11-03"
-# TODO before release: affiliation, ORCID (optional), repository-code URL, Zenodo DOI
+repository-code: "https://github.com/nguyenhuulong/gc-ids"
+url: "https://github.com/nguyenhuulong/gc-ids"
+doi: "10.5281/zenodo.23907847"
+keywords:
+  - network intrusion detection
+  - contrastive learning
+  - conditional VAE
+  - conditional GAN
+  - NSL-KDD
+  - UNSW-NB15
+  - tabular data
+abstract: "Code, configurations and raw result archives for a comparison of conditional VAE and conditional WGAN-GP as view generators in generative-augmented contrastive pretraining for network intrusion detection, evaluated on NSL-KDD and UNSW-NB15. The first submission's code was not preserved; all reported numbers come from this clean PyTorch re-implementation."
