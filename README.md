@@ -1,7 +1,14 @@
 # GC-IDS
 
+[![DOI](https://zenodo.org/badge/1443840377.svg)](https://doi.org/10.5281/zenodo.23907846)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Code and result archive for the article **"Generative-Augmented Contrastive Representation Learning for NIDS: A Comparison
 of CVAE and CGAN as View Generators"** (Generative-Contrastive framework, GC). Version `1.0-revision`.
+
+**Archived version.** The exact code and results behind the revised manuscript are archived on Zenodo, release
+`v1.0-revision`: [10.5281/zenodo.23907847](https://doi.org/10.5281/zenodo.23907847). The badge above points to the concept DOI,
+which always resolves to the latest version.
 
 > **Status of this code.** This is a clean PyTorch re-implementation. The code of the first submission was not preserved,
 > so every number in the revised manuscript was produced by *this* code, with leakage-free preprocessing and a **reduced,
@@ -76,4 +83,18 @@ Only NSL-KDD and UNSW-NB15 were evaluated. A CIC-IDS2017 loader is included but 
 Kang et al. (M2M-VAEGAN) is not included. See the manuscript for the limitations of the study.
 
 ## Licence and citation
-MIT licence (`LICENSE`). Please cite the article and this archive (`CITATION.cff`; DOI to be added after the Zenodo release).
+MIT licence (`LICENSE`). If you use this code or the archived results, please cite the article and this archive
+(see also `CITATION.cff`, or use "Cite this repository" on GitHub).
+
+```bibtex
+@software{nguyen_gcids_2026,
+  author    = {Nguyễn, Hữu Long and Nguyễn, Việt Hùng},
+  title     = {{GC-IDS}: code and results for ``Generative-Augmented Contrastive Representation
+               Learning for NIDS: A Comparison of CVAE and CGAN as View Generators''},
+  year      = {2026},
+  version   = {1.0-revision},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.23907847},
+  url       = {https://doi.org/10.5281/zenodo.23907847}
+}
+```
